@@ -20,10 +20,8 @@ function clicked()
     request.send(null);
 }
 
+var submit=document.getElementById('sub');
 submit.onclick = function(){
-    
-    var nameInput=document.getElementById('name').value;
-    var submit=document.getElementById('sub');
     
     //Create a request object
     var request = new XMLHttpRequest();
@@ -44,6 +42,7 @@ submit.onclick = function(){
     };
     
     //Make the request
+    var nameInput=document.getElementById('name').value;
     request.open('GET','http://apoorvakashyap54.imad.hasura-app.io/submit_names?name='+nameInput,true);
     request.send(null);
     
