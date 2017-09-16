@@ -45,6 +45,6 @@ submit.onclick = function(){
     var nameInput=document.getElementById('name').value;
     request.open('GET','http://apoorvakashyap54.imad.hasura-app.io/submit_names?name='+nameInput,true);
     request.send(null);
-    nameInput = null;
+    nameInput.innerHTML = null;
     
 };
