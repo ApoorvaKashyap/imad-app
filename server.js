@@ -107,8 +107,8 @@ res.send(counter.toString());
 });
 
 var names=[];
-app.get('/submit_names/:name',function(req,res){
- var name=req.params.name;
+app.get('/submit_names/',function(req,res){
+ var name=req.query.name;
  names.push(name);
  res.send(JSON.stringify(names));
 });
