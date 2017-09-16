@@ -20,9 +20,10 @@ function clicked()
     request.send(null);
 }
 
-var nameInput=document.getElementById('name').value;
-var submit=document.getElementById('sub');
 submit.onclick = function(){
+    
+    var nameInput=document.getElementById('name').value;
+    var submit=document.getElementById('sub');
     
     //Create a request object
     var request = new XMLHttpRequest();
