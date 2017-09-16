@@ -19,3 +19,15 @@ function clicked()
     request.open('GET','http://apoorvakashyap54.imad.hasura-app.io/counter',true);
     request.send(null);
 }
+
+var names=document.getElementById('name').value;
+var submit=document.getElementById('sub');
+submit.onclick = function(){
+    var names=['Name 1','Name 2','Name 3'];
+    var list='';
+    for(var i=0;i<names.length;i++){
+        list='<li>'+names[i]+'</li>';
+    }
+    var lists=document.getElementById('ul');
+    lists.innerHTML=list;
+};
