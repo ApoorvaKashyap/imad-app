@@ -28,6 +28,6 @@ submit.onclick = function(){
     for(var i=0;i<names.length;i++){
         list='<li>'+names[i]+'</li>';
     }
-    var lists=document.getElementById('ul');
-    lists.innerHTML=list;
+    var ul=document.getElementById('namelist');
+    ul.innerHTML=list;
 };
