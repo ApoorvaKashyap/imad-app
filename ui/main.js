@@ -43,8 +43,8 @@ submit.onclick = function(){
     
     //Make the request
     var nameInput=document.getElementById('name').value;
-    nameInput = null;
     request.open('GET','http://apoorvakashyap54.imad.hasura-app.io/submit_names?name='+nameInput,true);
     request.send(null);
+    nameInput = null;
     
 };
