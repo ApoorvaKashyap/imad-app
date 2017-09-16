@@ -23,7 +23,7 @@ function clicked()
 //var nameInput=document.getElementById('name').value;
 var submit=document.getElementById('sub');
 submit.onclick = function(){
-    var names=['Name 1','Name 2','Name 3'];
+    var names=['Jekyll','Mr. Hyde','Heidi'];
     var list='';
     for(var i=0;i<names.length;i++){
         list+='<li>'+names[i]+'</li>';
