@@ -106,6 +106,13 @@ counter++;
 res.send(counter.toString());
 });
 
+var names=[];
+app.get('/submit_names/:name',function(req,res){
+ var name=req.params.name;
+ names.push(name);
+ res.send(JSON.stringify(names));
+});
+
 app.get('/', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
