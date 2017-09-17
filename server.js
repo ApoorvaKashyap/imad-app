@@ -109,7 +109,7 @@ function createTemp (data) {
                 <h1 align="center">${heading}</h1>
                 </div>
                 <div class=date>
-                    ${date}
+                    ${date.toDateString()}
                 </div>
                 <div>
                     ${content}
