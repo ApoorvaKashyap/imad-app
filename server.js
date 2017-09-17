@@ -1,6 +1,16 @@
 var express = require('express');
 var morgan = require('morgan');
 var path = require('path');
+var path = require('pg').Pool;
+var pool = new Pool(config);
+
+var config = {
+    user:'apoorvakashyap54',
+    database:'apoorvakashyap54',
+    host:'http://db.imad.hasura-app.io/',
+    port:'5432',
+    password:process.env.DB_Password
+};
 
 var app = express();
 app.use(morgan('combined'));
@@ -22,7 +32,12 @@ app.get('/ui/Bumbly_Prof',function(req,res){
 });
 
 app.get('/db-test',function(req,res){
-    
+    pool.query('Select * from test',function(err,result){
+        if(err)
+            re.status(500).send(err.toString());
+        else
+            res.send(JSON.stringify(result));
+    });
 });
 
 var Articles = {    
