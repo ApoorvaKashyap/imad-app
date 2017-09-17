@@ -21,6 +21,10 @@ app.get('/ui/Bumbly_Prof',function(req,res){
     res.sendfile(path.join(__dirname,'ui','Bumbly_Prof.html'));
 });
 
+app.get('/db-test',function(req,res){
+    
+});
+
 var Articles = {    
     'Article_One' : {
         title:'Article One|Apoorva Kashyap',
