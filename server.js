@@ -153,10 +153,11 @@ app.get('/articles/:articlename',function(req,res){
         else if(result.rows.length === 0)
             res.status(404).send('Article Not Found!');
         else
-            res.send(JSON.stringify(result.rows));
-});
-    
-    res.send(createTemp(Articles[articlename]));
+        {    
+            var articleData=result.rows[0];
+            res.send(createTemp(articleData));
+        }
+    });
 });
 
 //Do not change port, otherwise your app won't run on IMAD servers
