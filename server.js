@@ -34,7 +34,7 @@ app.get('/ui/Bumbly_Prof',function(req,res){
 app.get('/db-test',function(req,res){
     pool.query('SELECT * FROM test',function(err,result){
         if(err)
-            {re.status(500).send(err.toString());}
+            {res.status(500).send(err.toString());}
         else
             {res.send(JSON.stringify(result));}
     });
