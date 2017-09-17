@@ -145,8 +145,17 @@ app.get('/ui/main.js', function (req, res) {
   res.sendFile(path.join(__dirname, 'ui', 'main.js'));
 });
 
-app.get('/ui/:articlename',function(req,res){
+app.get('/articles/:articlename',function(req,res){
     var articlename = req.params.articlename;
+    pool.query('SELECT * FROM Articles WHERE Title='+req.params.articlename,function(err,result){
+        if(err)
+            res.status(500).send(err.toString());
+        else if(result.rows.length === 0)
+            res.status(404).send('Article Not Found!');
+        else
+            res.send(JSON.stringify(result.rows));
+});
+    
     res.send(createTemp(Articles[articlename]));
 });
 
