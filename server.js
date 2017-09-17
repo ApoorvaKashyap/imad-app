@@ -146,7 +146,7 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 app.get('/Articles/:articlename',function(req,res){
-    var articlename = req.params.articlename;
+    //var articlename = req.params.articlename;
     pool.query("SELECT * FROM Articles WHERE Title='"+req.params.articlename+"'",function(err,result){
         if(err)
             res.status(500).send(err.toString());
